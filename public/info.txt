@@ -1,0 +1,90 @@
+gettype() -> funktion um Datentyp zurückzugeben
+(bool)$a -> Typkonvertierung
+
+Variable Variablen
+------------------
+$a = 'heyHey';
+$$a = 'Hey das ist der Wert einer Variable Variablen';
+
+echo $heyHey;
+
+#Sie weisen einer Variablen einen String zu. Diese Variable können Sie nun als Name für eine weitere Variable
+#festlegen. Dadurch wird eine Variable erzeugt, die als Namen den String der ersten
+#Variablen und als Wert den Wert der zweiten Variablen besitzt.
+
+Referenzen
+----------
+$a = 'Test hey test';
+$b = &$a;
+$a = 'akdpaokd HEY';
+
+echo $b;
+
+#Normalerweise hat eine Variable genau einen Wert. Der Wert der Variablen wird vom
+#PHP-Interpreter im Hauptspeicher gespeichert. Sie können allerdings auch mehrere
+#Variablen auf einen Wert verweisen lassen. Das funktioniert mit dem Et-Zeichen, das
+#oft auch kaufmännisches Und oder, auf Englisch, Ampersand genannt wird (&). Und
+#so geht es: Sie erstellen eine Variable und weisen dann mithilfe des Et-Zeichens einer
+#anderen Variablen die Referenz auf diese Variable zu:
+
+String vergleichen
+------------------
+
+ASCII Code
+
+#Kleinbuchstaben sind immer größer als Großbuchstaben, da sie höhere ASCIICodes haben.
+#Die Großbuchstaben haben die ASCII-Codes von 65 bis 90 in alphabetischer Reihenfolge.
+#Die Kleinbuchstaben haben die Codes von 97 bis 121 in alphabetischer Reihenfolge.
+#Die Buchstaben von Strings werden von links nach rechts miteinander verglichen.
+
+Binärzahlen und bitweise Operatoren
+
+#Die binäre Schreibweise besteht aus einem Muster. Das Muster hat so viele Stellen,
+#wie die Zahl Bits besitzt. Eine Zahl mit 4 Bit hat also vier Stellen und kann 24 Zahlen,
+#also 16 Zahlen darstellen:
+
+0010 = 2
+
+#wird von rechts nach links gelesen. rechte Zahl steht für 1, die zweite von rechts für die 2, die dritte für die 4, die vierte für 8,
+#die fünfte für … jetzt wird es offensichtlich. Diese Zahlen werden addiert und ergeben die Ganzzahl.
+
+Operator Beispiel Beschreibung
+&, 1010 & 0011 //Erg: 0010 = 2, Bitweises UND; schreibt an die Stellen
+eine 1, an denen beide Operanden eine 1
+besitzen.
+| 1010 | 0011 //Erg: 1011 = 11 Bitweises ODER; schreibt an die Stellen
+eine 1, an denen bei einem oder beiden
+Operanden 1 steht.
+^ 1010 ^ 0011 //Erg: 1001 = 9 Bitweises ENTWEDER ODER; schreibt an
+die Bits eine 1, an denen nur einer der
+beiden Operanden eine 1 besitzt.
+~ ~1010 //Erg: 0101 = -11 Bitweise Negation; wandelt eine 0 in eine
+1 und eine 1 in eine 0 um. Allerdings ist
+die Basis ein Integer mit 32 Bit (signed –
+sprich mit Vorzeichen), weswegen das
+Ergebnis keine direkte Umkehrung des
+Werts ist.
+<< 1010 << 1 //Erg: 10100 = 20 Bitweise Verschiebung nach links verschiebt das Binärmuster des linken Operanden um die im rechten Operanden
+angegebenen Stellen nach links. Die
+rechte Seite wird durch Nullen aufgefüllt.
+Die Verschiebung um eine Stelle entspricht der Multiplikation mit 2,
+um zwei Stellen der Multiplikation mit 4,
+um drei Stellen der Multiplikation mit 8
+usw.
+>> 1010 >> 1 //Erg: 0101 = 5 Bitweise Verschiebung nach rechts um
+die vom rechten Operanden angegebenen Stellen. Die Bits, die rechts übrig bleiben, werden gelöscht. Hat der linke
+Operand ein negatives Vorzeichen, wird
+die linke Seite mit Einsen aufgefüllt,
+ansonsten mit Nullen. Das Verschieben
+um ein Bit entspricht der Division durch 2
+(ohne Rest), das um zwei der Division
+durch 4, das um vier der Division durch 8
+usw.
+
+Konditionaler Operator
+----------------------
+??
+
+#Ab PHP 7 gibt es zusätzlich einen konditionalen Operator, der auch darauf prüft, ob
+#der erste Operand den Wert Null hat und in diesem Fall keine Notice als Fehler liefert,
+#sondern den Wert des zweiten Operanden.
